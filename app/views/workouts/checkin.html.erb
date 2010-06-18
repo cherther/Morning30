@@ -1,0 +1,46 @@
+<h2>Check In</h2>
+<% form_for(@workout, :url => { :action => 'save', :method => "post" } ) do |f| %>
+<%= f.error_messages %>
+<div>
+	<%= image_tag(gravatar_url_for self.current_user.email)%>
+<div><%= self.current_user.user_name %> (<%= self.current_user.email %>)</div>
+	<input type="hidden" id="workout_user_profile_id" name="workout[user_profile_id]" value="<%=self.current_user.id %>" />
+	</div>
+<div>&nbsp;</div>
+<div><label>When?</label></div>
+<div><%= f.text_field :workout_date %></div>
+<div><label>What?</label></div>
+<div id="workout_type">
+	<input type="radio" id="workout_workout_type_id_1" name="workout[workout_type_id]" checked="checked" value="1" />
+	<label for="workout_workout_type_id_1">Morning</label>
+	<input type="radio" id="workout_workout_type_id_2" name="workout[workout_type_id]" value="2" />
+	<label for="workout_workout_type_id_2">Noon</label>
+	<input type="radio" id="workout_workout_type_id_3" name="workout[workout_type_id]" value="3" />
+	<label for="workout_workout_type_id_3">Afternoon</label>
+	<input type="radio" id="workout_workout_type_id_4" name="workout[workout_type_id]" value="4" />
+	<label for="workout_workout_type_id_4">Evening</label>
+</div>
+<div><label>How Long?</label></div>
+<div id="length">
+	<input type="radio" id="workout_workout_length_1" name="workout[workout_length]" checked="checked" value="30" />
+	<label for="workout_workout_length_1">30m</label>
+	<input type="radio" id="workout_workout_length_2" name="workout[workout_length]" value="45" />
+	<label for="workout_workout_length_2">45m</label>
+	<input type="radio" id="workout_workout_length_3" name="workout[workout_length]" value="60" />
+	<label for="workout_workout_length_3">60m</label>
+	
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+<%= f.submit "Checkin" %>
+</div>
+<% end %>
+<script type="text/javascript">
+	$(function() {
+		$('#workout_type').buttonset();
+		$('#length').buttonset();
+		$('#workout_workout_date').datepicker();
+	});
+	</script>

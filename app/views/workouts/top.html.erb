@@ -1,0 +1,9 @@
+
+<h2>Leaderboard</h2>
+<a id="checkin-button" href="/checkin/">Check In!</a>
+
+<div class="cw-blue-border">
+	<div><button>Holy cow, <%= @total_count %> workouts and <%= @total_mins %> minutes have been checked in!</button></div>
+	<h3>Top Users</h3>
+	<%= render :partial => 'user_list' %>
+</div>

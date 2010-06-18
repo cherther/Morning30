@@ -1,0 +1,8 @@
+<% if @workout != nil %>
+<h2>Workout <%= @workout.id %></h2>
+<%= image_tag(gravatar_url_for @workout.user_profile.email, { :s => 80 })%>
+<div><%= @workout.user_profile.user_name %></div>
+<span><button><%= @workout.workout_date_display %></button></span>
+<span><button><%= @workout.workout_type.name %></button></span>
+<span><button><%= @workout.workout_length %></button></span>
+<% end %>

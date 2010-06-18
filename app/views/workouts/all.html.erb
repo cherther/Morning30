@@ -1,0 +1,14 @@
+
+<h2>All workouts</h2>
+<a id="checkin-button" href="/checkin/">Check In!</a>
+<% if @workout != nil %>
+<div class="cw-blue-border">
+	<%= render :partial => 'show' %>
+</div>
+<% end %>
+<div class="cw-blue-border">
+	<div><button>Holy cow, <%= @total_count %> workouts and <%= @total_mins %> minutes have been checked in!</button></div>
+	<% if @workouts != nil %>
+	<%= render :partial => 'workout_list' %>
+	<% end %>
+</div>

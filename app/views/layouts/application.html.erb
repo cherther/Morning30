@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morning 30s!</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%#= csrf_meta_tag %>
+</head>
+<body>
+	<div id="wrapper">
+	<div id="header">
+		<h1>Morning 30s</h1>
+	</div>
+	<a href="/leaderboard">Leaderboard</a>
+	<a href="/myworkouts">My Workouts</a>
+	<a href="/workouts">Everyone's</a>
+	<a href="/account/logout">Log out</a>
+	
+	</div>
+	<div id="content" class="cw-blue-border">
+		<%= yield -%>
+	</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		$("button, input:submit, a").button();
+		
+		$("#tabs").tabs({
+					ajaxOptions: {
+						error: function(xhr, status, index, anchor) {
+							$(anchor.hash).html("Couldn't load this tab.");
+						}
+					}
+				});
+	});
+	</script>
+</html>

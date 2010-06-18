@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_profile_id: 1
+  workout_date: 2010-06-18
+  workout_type_id: 1
+  workout_length: 1
+
+two:
+  user_profile_id: 1
+  workout_date: 2010-06-18
+  workout_type_id: 1
+  workout_length: 1

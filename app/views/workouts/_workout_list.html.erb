@@ -1,0 +1,42 @@
+<table id="tbl-workouts">
+	<tr>
+		<th class="center">#</th>
+		<th class="center">
+			Who
+		</th>
+		<th>
+			When
+		</th>
+		<th class="center">
+			What?
+		</th>
+		<th class="center">
+			How Long?
+		</th>
+		<th>
+		</th>
+	</tr>
+<% for workout in @workouts %>
+	<tr>
+		<td class="center">
+			<a href="/workouts/<%= workout.id %>"><%= workout.id %></a>
+		</td>
+		<td class="center">
+			<%= image_tag(gravatar_url_for workout.user_profile.email, { :s => 40 })%>
+				
+			<div><%= workout.user_profile.user_name %></div>
+		</td>
+		<td>
+			<%= workout.workout_date_display %>
+		</td>
+		<td class="center">
+			<button><%= workout.workout_type.name %></button>
+		</td>
+		<td class="center">
+			<%= workout.workout_length %>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<% end %>
+<table>

@@ -1,0 +1,12 @@
+
+<h2>Your workouts</h2>
+<a id="checkin-button" href="/checkin/">Check In!</a>
+<div class="cw-blue-border">
+	
+	<%= render :partial => 'show' %>
+</div>
+<div class="cw-blue-border">
+	<div><button>Wow, you've checked in <%= @total_count %> workouts and <%= @total_mins %> minutes!</button></div>
+	
+	<%= render :partial => 'workout_list' %>
+</div>

@@ -1,0 +1,28 @@
+<table id="tbl-workouts">
+	<tr>
+		<th class="center">
+			Who
+		</th>
+		<th class="center">
+			How Long?
+		</th>
+		<th class="center">
+			How Often?
+		</th>
+	</tr>
+<% for listing in @users %>
+	<tr>
+		<td class="center">
+			<%= image_tag(gravatar_url_for listing.user_profile.email, { :s => 40 })%>
+				
+			<div><%= listing.user_profile.user_name %></div>
+		</td>
+		<td class="center">
+			<%= listing.workout_length %>
+		</td>
+		<td class="center">
+			<%= listing.number_workouts %>
+		</td>
+	</tr>
+	<% end %>
+<table>
