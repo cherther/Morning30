@@ -6,16 +6,23 @@ class WorkoutsController < ApplicationController
   # /workouts/all
   # /workouts.xml
   def all
-    if params[:id] != nil
-      id = params[:id]
-      @workout = Workout.find_by_id(id)
-    end
-    
     totals = Workout.find(:first, :select => 'sum(workout_length) as total_mins, count(*) as total_count')
     @total_mins = totals.total_mins
     @total_count = totals.total_count
-    @workouts = Workout.find(:all, :limit => 50, :order => 'workout_date desc, created_at desc')
+    if params[:id] != nil
+      id = params[:id]
+      @workout = Workout.find(id, :include => [:user_profile,:workout_type])
+    end
     
+    @workouts = Workout.find(
+      :all, 
+      :limit => 50, 
+      :include => [:user_profile,:workout_type],
+      :order => 'workout_date desc, created_at desc')
+    #if params[:id] != nil
+    #  id = params[:id]
+    #  @workout = @workouts.find(id).first()
+    #end
   end
   
   # My Workouts
@@ -33,7 +40,12 @@ class WorkoutsController < ApplicationController
     @total_mins = totals.total_mins
     @total_count = totals.total_count
 
-    @workouts = Workout.find(:all, :conditions => condition, :limit => 50, :order => 'workout_date desc, created_at desc')    
+    @workouts = Workout.find(
+      :all, 
+      :conditions => condition, 
+      :include => [:user_profile,:workout_type],
+      :limit => 50, 
+      :order => 'workout_date desc, created_at desc')    
   end
   
   # Show users with most minutes / workouts
@@ -46,6 +58,7 @@ class WorkoutsController < ApplicationController
     @users = Workout.find(:all, 
       :select => 'user_profile_id, SUM(workout_length) as workout_length, COUNT(*) as number_workouts', 
       :group => 'user_profile_id',
+      :include => :user_profile,#,:workout_type],
       :order => 'number_workouts desc, workout_length desc',
       :limit => 10)
   end
@@ -54,7 +67,7 @@ class WorkoutsController < ApplicationController
   # => /workout
   # /workouts/show/5
   def show
-    @workout = Workout.find(params[:id])
+    @workout = Workout.find(params[:id], :include => [:user_profile,:workout_type])
   end
   
   # Checkin new workout
@@ -80,4 +93,5 @@ class WorkoutsController < ApplicationController
       render :action => 'checkin' #{@workout.id}"
     end
   end
+
 end
