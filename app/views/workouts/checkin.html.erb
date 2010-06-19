@@ -9,7 +9,9 @@
 <div>&nbsp;</div>
 <div><label>When?</label></div>
 <div><%= f.text_field :workout_date %></div>
-<div><label>What?</label></div>
+<div>
+	<label>When?</label>
+</div>
 <div id="workout_type">
 	<input type="radio" id="workout_workout_type_id_1" name="workout[workout_type_id]" checked="checked" value="1" />
 	<label for="workout_workout_type_id_1">Morning</label>
@@ -20,6 +22,19 @@
 	<input type="radio" id="workout_workout_type_id_4" name="workout[workout_type_id]" value="4" />
 	<label for="workout_workout_type_id_4">Evening</label>
 </div>
+<div>
+	<label>Or, what?</label>
+</div>
+<div id="workout_type_2">
+	<input type="radio" id="workout_workout_type_id_5" name="workout[workout_type_id]" value="5" />
+	<label for="workout_workout_type_id_5">Intervals</label>
+	<input type="radio" id="workout_workout_type_id_6" name="workout[workout_type_id]" value="6" />
+	<label for="workout_workout_type_id_6">Speed</label>
+	<input type="radio" id="workout_workout_type_id_7" name="workout[workout_type_id]" value="7" />
+	<label for="workout_workout_type_id_7">Hills</label>
+	<input type="radio" id="workout_workout_type_id_8" name="workout[workout_type_id]" value="8" />
+	<label for="workout_workout_type_id_8">Distance</label>
+</div>
 <div><label>How Long?</label></div>
 <div id="length">
 	<input type="radio" id="workout_workout_length_1" name="workout[workout_length]" checked="checked" value="30" />
@@ -28,7 +43,6 @@
 	<label for="workout_workout_length_2">45m</label>
 	<input type="radio" id="workout_workout_length_3" name="workout[workout_length]" value="60" />
 	<label for="workout_workout_length_3">60m</label>
-	
 </div>
 <div>
 &nbsp;
@@ -40,6 +54,7 @@
 <script type="text/javascript">
 	$(function() {
 		$('#workout_type').buttonset();
+		$('#workout_type_2').buttonset();
 		$('#length').buttonset();
 		$('#workout_workout_date').datepicker();
 	});
