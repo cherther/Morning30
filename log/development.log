@@ -3130,3 +3130,11 @@ Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-18 19:05:12) [GE
 Rendering template within layouts/application
 Rendering workouts/checkin
 Completed in 56ms (View: 11, DB: 36) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUserProfile Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.5ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;36;1mWorkout Load (0.3ms)[0m   [0;1mSELECT * FROM `workouts` WHERE (`workouts`.user_profile_id = 1) [0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+  [4;36;1mWorkoutType Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `workout_types`[0m
+  [4;35;1mWorkoutType Load (221.0ms)[0m   [0mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 1) [0m
