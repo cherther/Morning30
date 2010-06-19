@@ -5,3 +5,5 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+WorkoutType.create([{ :name => 'Morning' }, { :name => 'Noon' }, { :name => 'Afternoon' }, { :name => 'Evening' }])
