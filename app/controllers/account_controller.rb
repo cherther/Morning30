@@ -3,6 +3,8 @@ class AccountController < ApplicationController
   before_filter :login_required, :only=>['logout']
   
   def login
+    #http%3A%2F%2Flocalhost%3A3000%2Faccount%2Fopenid"
+    @token_url = request.protocol + request.host + request.port_string + '/account/openid'
   end
   
   def openid

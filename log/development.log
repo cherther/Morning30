@@ -3138,3 +3138,170 @@ Completed in 56ms (View: 11, DB: 36) | 200 OK [http://localhost/checkin/]
   [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
   [4;36;1mWorkoutType Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `workout_types`[0m
   [4;35;1mWorkoutType Load (221.0ms)[0m   [0mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-19 12:11:22) [GET]
+Redirected to http://localhost:3000/workouts/
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#all (for 127.0.0.1 at 2010-06-19 12:11:22) [GET]
+  [4;36;1mWorkout Load (0.3ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+  [4;36;1mWorkout Load (0.2ms)[0m   [0;1mSELECT * FROM `workouts` ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;35;1mUserProfile Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.6ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` IN (1,2)) [0m
+  [4;35;1mWorkoutType Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (1.4ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (1,2,4)) [0m
+Rendering template within layouts/application
+Rendering workouts/all
+Rendered workouts/_workout_list (9.6ms)
+Completed in 98ms (View: 48, DB: 8) | 200 OK [http://localhost/workouts/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2010-06-19 12:11:26) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 55ms (DB: 0) | 302 Found [http://localhost/account/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:11:26) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:13:39) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:13:54) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:14:20) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:14:31) [POST]
+  Parameters: {"token"=>"5dc187ee336174276cf4e3c8c335386f659a0258"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (86.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#openid (for 127.0.0.1 at 2010-06-19 12:16:27) [POST]
+  Parameters: {"token"=>"0c03f14e2a67c078da3b2816c1da1d545152951e"}
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (37.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`identifier` = 'https://www.google.com/accounts/o8/id?id=AItOawlD8A4ywnBF1yvS7Bb9oglLr8p0HJzwlRY') LIMIT 1[0m
+Redirected to http://localhost:3000/account/logout
+Completed in 1357ms (DB: 39) | 302 Found [http://localhost/account/openid]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2010-06-19 12:16:29) [GET]
+Redirected to http://localhost:3000/login
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/account/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:16:29) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:16:32) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:16:32) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:17:48) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:17:50) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-19 12:17:50) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#openid (for 127.0.0.1 at 2010-06-19 12:18:14) [POST]
+  Parameters: {"token"=>"4d8bc4f05f1ec5b76a01e218088931de70e320b6"}
+  [4;35;1mUserProfile Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (37.5ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`identifier` = 'https://www.google.com/accounts/o8/id?id=AItOawlD8A4ywnBF1yvS7Bb9oglLr8p0HJzwlRY') LIMIT 1[0m
+Redirected to http://localhost:3000/workouts
+Completed in 1253ms (DB: 39) | 302 Found [http://localhost/account/openid]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#all (for 127.0.0.1 at 2010-06-19 12:18:15) [GET]
+  [4;35;1mWorkout Load (0.3ms)[0m   [0mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (1.2ms)[0m   [0mSELECT * FROM `workouts` ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;36;1mUserProfile Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.4ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` IN (1,2)) [0m
+  [4;36;1mWorkoutType Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `workout_types`[0m
+  [4;35;1mWorkoutType Load (0.2ms)[0m   [0mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (1,2,4)) [0m
+Rendering template within layouts/application
+Rendering workouts/all
+Rendered workouts/_workout_list (8.4ms)
+Completed in 31ms (View: 12, DB: 7) | 200 OK [http://localhost/workouts]
