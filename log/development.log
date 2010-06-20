@@ -3526,3 +3526,1018 @@ Rendering workouts/my
 Rendered workouts/_show (4.6ms)
 Rendered workouts/_workout_list (5.6ms)
 Completed in 98ms (View: 27, DB: 49) | 200 OK [http://localhost/myworkouts/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-06-20 17:21:38) [GET]
+Redirected to http://localhost:3000/workouts/
+Completed in 1ms (DB: 1) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#all (for 127.0.0.1 at 2010-06-20 17:21:38) [GET]
+  [4;36;1mWorkout Load (28.6ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;35;1mWorkout Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+  [4;36;1mWorkout Load (0.2ms)[0m   [0;1mSELECT * FROM `workouts` ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;35;1mUserProfile Columns (5.4ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.0ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` IN (1,2)) [0m
+  [4;35;1mWorkoutType Columns (21.6ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (1.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (1,2,4,5)) [0m
+Rendering template within layouts/application
+Rendering workouts/all
+Rendered workouts/_workout_list (10.4ms)
+Completed in 216ms (View: 81, DB: 61) | 200 OK [http://localhost/workouts/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:21:41) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/checkin/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2010-06-20 17:21:41) [GET]
+Rendering template within layouts/application
+Rendering account/login
+Completed in 79ms (View: 78, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#openid (for 127.0.0.1 at 2010-06-20 17:21:53) [POST]
+  Parameters: {"token"=>"3f38f17801749a8dcfc7e1948201f97f8e933090"}
+  [4;35;1mUserProfile Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (41.0ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`identifier` = 'https://www.google.com/accounts/o8/id?id=AItOawlD8A4ywnBF1yvS7Bb9oglLr8p0HJzwlRY') LIMIT 1[0m
+Redirected to http://localhost:3000/checkin/
+Completed in 1264ms (DB: 43) | 302 Found [http://localhost/account/openid]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:21:54) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 22ms (View: 11, DB: 4) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:22:33) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (38.7ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 63ms (View: 11, DB: 42) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:22:50) [GET]
+  [4;35;1mUserProfile Columns (12.1ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.7ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 32ms (View: 9, DB: 15) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:23:01) [GET]
+  [4;36;1mUserProfile Columns (243.0ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (3.5ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 269ms (View: 10, DB: 249) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:23:25) [GET]
+  [4;35;1mUserProfile Columns (15.9ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.4ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 90ms (View: 10, DB: 19) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#save (for 127.0.0.1 at 2010-06-20 17:23:27) [POST]
+  Parameters: {"method"=>"post", "authenticity_token"=>"66OgJB+po0MnSIijlrVcNIyAvsgEXOjd+qwGhX7eP5Y=", "workout"=>{"workout_type_id"=>"1", "workout_date"=>"2010-06-20", "user_profile_id"=>"1", "workout_length"=>"30"}}
+  [4;36;1mWorkout Columns (259.0ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mWorkout Create (0.3ms)[0m   [0;1mINSERT INTO `workouts` (`created_at`, `updated_at`, `workout_type_id`, `user_profile_id`, `workout_date`, `workout_length`) VALUES('2010-06-20 15:23:27', '2010-06-20 15:23:27', 1, 1, '2010-06-20', 30)[0m
+  [4;35;1mSQL (21.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/myworkouts/9
+Completed in 291ms (DB: 282) | 302 Found [http://localhost/save?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#my (for 127.0.0.1 at 2010-06-20 17:23:27) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mUserProfile Columns (7.7ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.4ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (2.0ms)[0m   [0mSELECT * FROM `workouts` WHERE (`workouts`.`id` = '9') LIMIT 1[0m
+  [4;36;1mWorkout Load (0.2ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` WHERE (user_profile_id = 1) LIMIT 1[0m
+  [4;35;1mWorkout Load (0.2ms)[0m   [0mSELECT * FROM `workouts` WHERE (user_profile_id = 1) ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;36;1mUserProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;35;1mWorkoutType Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (1.4ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (1,2,4,5)) [0m
+Rendering template within layouts/application
+Rendering workouts/my
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;36;1mWorkoutType Load (0.3ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 1) [0m
+Rendered workouts/_show (17.9ms)
+Rendered workouts/_workout_list (5.5ms)
+Completed in 79ms (View: 48, DB: 17) | 200 OK [http://localhost/myworkouts/9]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:23:29) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (40.3ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 60ms (View: 7, DB: 44) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:23:58) [GET]
+  [4;36;1mUserProfile Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.9ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 36ms (View: 9, DB: 19) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:33:34) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (37.6ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 62ms (View: 12, DB: 41) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:34:04) [GET]
+  [4;36;1mUserProfile Columns (58.8ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (0.6ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 81ms (View: 11, DB: 61) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:34:33) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (32.6ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 53ms (View: 7, DB: 36) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:35:20) [GET]
+  [4;36;1mUserProfile Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (33.9ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 58ms (View: 11, DB: 38) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:36:29) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (39.8ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 12, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:38:17) [GET]
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (227.3ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (51.1ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 301ms (View: 12, DB: 280) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:40:04) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (36.0ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 111ms (View: 10, DB: 39) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:41:25) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (40.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 12, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:42:03) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (34.8ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 60ms (View: 12, DB: 38) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:42:46) [GET]
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (218.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (55.3ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 292ms (View: 7, DB: 275) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:43:23) [GET]
+  [4;35;1mUserProfile Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (39.3ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 60ms (View: 7, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:43:55) [GET]
+  [4;36;1mUserProfile Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (41.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 112ms (View: 59, DB: 45) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:44:33) [GET]
+  [4;35;1mUserProfile Columns (9.4ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (0.3ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 30ms (View: 9, DB: 11) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:45:34) [GET]
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (34.8ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 55ms (View: 10, DB: 38) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:45:46) [GET]
+  [4;35;1mUserProfile Columns (48.8ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (0.6ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 70ms (View: 10, DB: 51) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:46:01) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (41.5ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 66ms (View: 12, DB: 45) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:46:17) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (37.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 114ms (View: 65, DB: 40) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:46:37) [GET]
+  [4;36;1mUserProfile Columns (8.9ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 29ms (View: 10, DB: 12) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:47:07) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (41.9ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 63ms (View: 10, DB: 45) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:47:23) [GET]
+  [4;36;1mUserProfile Columns (34.3ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (0.8ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 57ms (View: 11, DB: 37) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:47:51) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (36.9ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 61ms (View: 11, DB: 40) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:48:17) [GET]
+  [4;36;1mUserProfile Columns (8.7ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 82ms (View: 9, DB: 12) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:48:39) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (36.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 59ms (View: 11, DB: 40) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:48:49) [GET]
+  [4;36;1mUserProfile Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 26ms (View: 9, DB: 9) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:49:09) [GET]
+  [4;35;1mUserProfile Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (35.7ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 60ms (View: 12, DB: 39) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:49:44) [GET]
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (33.3ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 57ms (View: 11, DB: 37) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:50:01) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (34.0ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 58ms (View: 12, DB: 37) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:50:58) [GET]
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (36.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 60ms (View: 12, DB: 40) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:51:10) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (40.0ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 118ms (View: 65, DB: 44) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:51:44) [GET]
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (41.4ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 66ms (View: 12, DB: 45) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:52:24) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (36.8ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 61ms (View: 12, DB: 40) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:52:38) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (40.7ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 65ms (View: 11, DB: 44) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:53:37) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (42.9ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 67ms (View: 11, DB: 46) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#save (for 127.0.0.1 at 2010-06-20 17:54:01) [POST]
+  Parameters: {"commit"=>"Checkin", "method"=>"post", "authenticity_token"=>"66OgJB+po0MnSIijlrVcNIyAvsgEXOjd+qwGhX7eP5Y=", "workout"=>{"workout_type_id"=>"8", "workout_date"=>"2010-06-20", "user_profile_id"=>"1", "workout_length"=>"90"}}
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mWorkout Create (0.2ms)[0m   [0;1mINSERT INTO `workouts` (`created_at`, `updated_at`, `workout_type_id`, `user_profile_id`, `workout_date`, `workout_length`) VALUES('2010-06-20 15:54:01', '2010-06-20 15:54:01', 8, 1, '2010-06-20', 90)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/myworkouts/10
+Completed in 44ms (DB: 36) | 302 Found [http://localhost/save?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#my (for 127.0.0.1 at 2010-06-20 17:54:01) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mUserProfile Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.2ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (1.2ms)[0m   [0mSELECT * FROM `workouts` WHERE (`workouts`.`id` = '10') LIMIT 1[0m
+  [4;36;1mWorkout Load (0.1ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` WHERE (user_profile_id = 1) LIMIT 1[0m
+  [4;35;1mWorkout Load (0.2ms)[0m   [0mSELECT * FROM `workouts` WHERE (user_profile_id = 1) ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;36;1mUserProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;35;1mWorkoutType Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (1.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (8,1,2,4,5)) [0m
+Rendering template within layouts/application
+Rendering workouts/my
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;36;1mWorkoutType Load (0.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 8) [0m
+Rendered workouts/_show (4.0ms)
+Rendered workouts/_workout_list (6.6ms)
+Completed in 36ms (View: 14, DB: 9) | 200 OK [http://localhost/myworkouts/10]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#my (for 127.0.0.1 at 2010-06-20 17:54:07) [GET]
+  [4;35;1mUserProfile Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (4.0ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Load (0.2ms)[0m   [0mSELECT max(id) as last_id FROM `workouts` WHERE (user_profile_id = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (0.5ms)[0m   [0mSELECT * FROM `workouts` WHERE (`workouts`.`id` = '10') LIMIT 1[0m
+  [4;36;1mWorkout Load (0.1ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` WHERE (user_profile_id = 1) LIMIT 1[0m
+  [4;35;1mWorkout Load (0.2ms)[0m   [0mSELECT * FROM `workouts` WHERE (user_profile_id = 1) ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;36;1mUserProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;35;1mWorkoutType Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (2.0ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (8,1,2,4,5)) [0m
+Rendering template within layouts/application
+Rendering workouts/my
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;36;1mWorkoutType Load (0.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 8) [0m
+Rendered workouts/_show (3.5ms)
+Rendered workouts/_workout_list (6.3ms)
+Completed in 46ms (View: 13, DB: 18) | 200 OK [http://localhost/myworkouts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#top (for 127.0.0.1 at 2010-06-20 17:54:09) [GET]
+  [4;35;1mWorkout Load (0.4ms)[0m   [0mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;36;1mWorkout Columns (11.9ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (0.9ms)[0m   [0mSELECT user_profile_id, SUM(workout_length) as workout_length, COUNT(*) as number_workouts FROM `workouts` GROUP BY user_profile_id ORDER BY number_workouts desc, workout_length desc LIMIT 10[0m
+  [4;36;1mUserProfile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.4ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering workouts/top
+  [4;36;1mUserProfile Load (0.3ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 2) [0m
+Rendered workouts/_user_list (297.8ms)
+Completed in 419ms (View: 394, DB: 17) | 200 OK [http://localhost/leaderboard]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#top (for 127.0.0.1 at 2010-06-20 17:55:56) [GET]
+  [4;35;1mWorkout Load (0.3ms)[0m   [0mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (39.4ms)[0m   [0mSELECT user_profile_id, SUM(workout_length) as workout_length, COUNT(*) as number_workouts FROM `workouts` GROUP BY user_profile_id ORDER BY number_workouts desc, workout_length desc LIMIT 10[0m
+  [4;36;1mUserProfile Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering workouts/top
+  [4;36;1mUserProfile Load (0.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 2) [0m
+Rendered workouts/_user_list (4.1ms)
+Completed in 62ms (View: 8, DB: 45) | 200 OK [http://localhost/leaderboard]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 17:55:58) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (40.5ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 11, DB: 44) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:00:51) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (39.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 63ms (View: 11, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:01:52) [GET]
+  [4;35;1mUserProfile Columns (9.2ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 30ms (View: 10, DB: 12) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:03:49) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (41.5ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 65ms (View: 11, DB: 45) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:04:56) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (44.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 121ms (View: 9, DB: 48) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:05:26) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (39.8ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 12, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:06:03) [GET]
+  [4;35;1mUserProfile Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (33.4ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 55ms (View: 11, DB: 37) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:07:11) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (0.4ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 62ms (View: 12, DB: 4) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:07:33) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (34.7ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 58ms (View: 11, DB: 38) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:09:32) [GET]
+  [4;36;1mUserProfile Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (43.8ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 67ms (View: 11, DB: 47) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:10:09) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (39.7ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 12, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:11) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (39.3ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 12, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:16) [GET]
+  [4;35;1mUserProfile Columns (55.4ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (65.9ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (57.4ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 203ms (View: 13, DB: 179) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:18) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (115.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 135ms (View: 7, DB: 119) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:21) [GET]
+  [4;35;1mUserProfile Columns (34.4ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (71.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (95.2ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 277ms (View: 12, DB: 201) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:38) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (39.2ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 62ms (View: 11, DB: 43) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:46) [GET]
+  [4;35;1mUserProfile Columns (11.1ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (1.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 32ms (View: 10, DB: 14) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:11:57) [GET]
+  [4;36;1mUserProfile Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (35.2ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 58ms (View: 11, DB: 38) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:14:03) [GET]
+  [4;35;1mUserProfile Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (38.3ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 59ms (View: 9, DB: 42) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:14:26) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (37.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 60ms (View: 11, DB: 41) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:14:26) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (2.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 19ms (View: 6, DB: 5) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:14:26) [GET]
+  [4;36;1mUserProfile Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.1ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 17ms (View: 6, DB: 4) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:14:27) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (0.9ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 18ms (View: 6, DB: 4) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:14:27) [GET]
+  [4;36;1mUserProfile Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.3ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 18ms (View: 6, DB: 5) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:15:31) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (40.9ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 64ms (View: 11, DB: 44) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#save (for 127.0.0.1 at 2010-06-20 18:15:50) [POST]
+  Parameters: {"commit"=>"Checkin", "method"=>"post", "authenticity_token"=>"66OgJB+po0MnSIijlrVcNIyAvsgEXOjd+qwGhX7eP5Y=", "workout"=>{"workout_type_id"=>"1", "workout_date"=>"2010-06-20", "user_profile_id"=>"1", "workout_length"=>"150"}}
+  [4;36;1mWorkout Columns (10.2ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mWorkout Create (0.2ms)[0m   [0;1mINSERT INTO `workouts` (`created_at`, `updated_at`, `workout_type_id`, `user_profile_id`, `workout_date`, `workout_length`) VALUES('2010-06-20 16:15:50', '2010-06-20 16:15:50', 1, 1, '2010-06-20', 150)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/myworkouts/11
+Completed in 19ms (DB: 13) | 302 Found [http://localhost/save?method=post]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#my (for 127.0.0.1 at 2010-06-20 18:15:50) [GET]
+  Parameters: {"id"=>"11"}
+  [4;36;1mUserProfile Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (3.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (1.5ms)[0m   [0mSELECT * FROM `workouts` WHERE (`workouts`.`id` = '11') LIMIT 1[0m
+  [4;36;1mWorkout Load (0.1ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` WHERE (user_profile_id = 1) LIMIT 1[0m
+  [4;35;1mWorkout Load (0.2ms)[0m   [0mSELECT * FROM `workouts` WHERE (user_profile_id = 1) ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;36;1mUserProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;35;1mWorkoutType Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (1.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (8,1,2,4,5)) [0m
+Rendering template within layouts/application
+Rendering workouts/my
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;36;1mWorkoutType Load (0.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 1) [0m
+Rendered workouts/_show (3.6ms)
+Rendered workouts/_workout_list (7.2ms)
+Completed in 96ms (View: 14, DB: 11) | 200 OK [http://localhost/myworkouts/11]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#top (for 127.0.0.1 at 2010-06-20 18:15:53) [GET]
+  [4;35;1mWorkout Load (0.3ms)[0m   [0mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (43.6ms)[0m   [0mSELECT user_profile_id, SUM(workout_length) as workout_length, COUNT(*) as number_workouts FROM `workouts` GROUP BY user_profile_id ORDER BY number_workouts desc, workout_length desc LIMIT 10[0m
+  [4;36;1mUserProfile Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering workouts/top
+  [4;36;1mUserProfile Load (0.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 2) [0m
+Rendered workouts/_user_list (4.1ms)
+Completed in 66ms (View: 8, DB: 49) | 200 OK [http://localhost/leaderboard]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#top (for 127.0.0.1 at 2010-06-20 18:18:01) [GET]
+  [4;35;1mWorkout Load (0.3ms)[0m   [0mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (34.8ms)[0m   [0mSELECT user_profile_id, SUM(workout_length) as workout_length, COUNT(*) as number_workouts FROM `workouts` GROUP BY user_profile_id ORDER BY number_workouts desc, workout_length desc LIMIT 10[0m
+  [4;36;1mUserProfile Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.2ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering workouts/top
+  [4;36;1mUserProfile Load (0.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 2) [0m
+Rendered workouts/_user_list (3.9ms)
+Completed in 57ms (View: 7, DB: 40) | 200 OK [http://localhost/leaderboard]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:18:03) [GET]
+  [4;35;1mUserProfile Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (38.8ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 117ms (View: 10, DB: 42) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:18:04) [GET]
+  [4;36;1mUserProfile Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (38.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 58ms (View: 7, DB: 42) | 200 OK [http://localhost/checkin/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#checkin (for 127.0.0.1 at 2010-06-20 18:19:22) [GET]
+  [4;35;1mUserProfile Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `user_profiles`[0m
+  [4;36;1mUserProfile Load (36.2ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;35;1mWorkout Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `workouts`[0m
+Rendering template within layouts/application
+Rendering workouts/checkin
+Completed in 56ms (View: 7, DB: 40) | 200 OK [http://localhost/checkin/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#save (for 127.0.0.1 at 2010-06-20 18:19:35) [POST]
+  Parameters: {"commit"=>"Checkin", "method"=>"post", "authenticity_token"=>"66OgJB+po0MnSIijlrVcNIyAvsgEXOjd+qwGhX7eP5Y=", "workout"=>{"workout_type_id"=>"1", "workout_date"=>"2010-06-20", "user_profile_id"=>"1", "workout_length"=>"480"}}
+  [4;36;1mWorkout Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mSQL (40.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mWorkout Create (0.3ms)[0m   [0;1mINSERT INTO `workouts` (`created_at`, `updated_at`, `workout_type_id`, `user_profile_id`, `workout_date`, `workout_length`) VALUES('2010-06-20 16:19:35', '2010-06-20 16:19:35', 1, 1, '2010-06-20', 480)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/myworkouts/12
+Completed in 52ms (DB: 44) | 302 Found [http://localhost/save?method=post]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WorkoutsController#my (for 127.0.0.1 at 2010-06-20 18:19:35) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mUserProfile Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `user_profiles`[0m
+  [4;35;1mUserProfile Load (1.2ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) LIMIT 1[0m
+  [4;36;1mWorkout Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `workouts`[0m
+  [4;35;1mWorkout Load (1.5ms)[0m   [0mSELECT * FROM `workouts` WHERE (`workouts`.`id` = '12') LIMIT 1[0m
+  [4;36;1mWorkout Load (0.2ms)[0m   [0;1mSELECT sum(workout_length) as total_mins, count(*) as total_count FROM `workouts` WHERE (user_profile_id = 1) LIMIT 1[0m
+  [4;35;1mWorkout Load (0.2ms)[0m   [0mSELECT * FROM `workouts` WHERE (user_profile_id = 1) ORDER BY workout_date desc, created_at desc LIMIT 50[0m
+  [4;36;1mUserProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;35;1mWorkoutType Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `workout_types`[0m
+  [4;36;1mWorkoutType Load (1.1ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` IN (8,1,2,4,5)) [0m
+Rendering template within layouts/application
+Rendering workouts/my
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `user_profiles` WHERE (`user_profiles`.`id` = 1) [0m
+  [4;36;1mWorkoutType Load (0.2ms)[0m   [0;1mSELECT * FROM `workout_types` WHERE (`workout_types`.`id` = 1) [0m
+Rendered workouts/_show (3.5ms)
+Rendered workouts/_workout_list (8.2ms)
+Completed in 37ms (View: 15, DB: 9) | 200 OK [http://localhost/myworkouts/12]
